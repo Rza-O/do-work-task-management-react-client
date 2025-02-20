@@ -1,5 +1,7 @@
 import React from 'react';
 import useAuth from '../Hooks/useAuth';
+import Navbar from '../Components/Navbar';
+import Welcome from '../Components/Welcome';
 
 const Home = () => {
    const { handleLogOut } = useAuth();
@@ -7,9 +9,11 @@ const Home = () => {
       handleLogOut();
    }
    return (
-      <div>
-         <h1 className='text-2xl'>This is home page</h1>
-         <button onClick={handleSignOut}>Logout</button>
+      <div className=''>
+         <Navbar />
+         <section className=''>
+            <Welcome />
+         </section>
       </div>
    );
 };
