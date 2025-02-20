@@ -1,7 +1,7 @@
 import React from 'react';
-import useAuth from '../Hooks/useAuth';
 import Navbar from '../Components/Navbar';
 import Welcome from '../Components/Welcome';
+import useAuth from '../Hooks/useAuth';
 
 const Home = () => {
    const { handleLogOut } = useAuth();
@@ -14,6 +14,7 @@ const Home = () => {
          <section className=''>
             <Welcome />
          </section>
+
       </div>
    );
 };
