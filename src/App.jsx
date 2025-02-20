@@ -1,22 +1,29 @@
+import { Navigate, Outlet, useLocation } from 'react-router-dom'
 import './App.css'
+import Loading from './Components/Loading'
 import useAuth from './Hooks/useAuth'
 
 function App() {
-  const { handleGoogleLogin } = useAuth();
+  const { user, loading } = useAuth();
+  // Get current route
+  const location = useLocation(); 
 
-  const handleSocialLogin = () => {
-    handleGoogleLogin()
-      .then(res => console.log('login successful!'))
-      .catch(err => console.log(err))
+  if (loading) {
+    return <Loading />;
   }
 
-  return (
-    <>
-      <h2 className='text-5xl'>Do Work</h2>
-      <p>Smart solution for task management!</p>
-      <button onClick={handleSocialLogin}>Click me to google login</button>
-    </>
-  )
+  // Redirect logged-in users away from login page
+  if (user && location.pathname === "/login") {
+    return <Navigate to="/" replace />;
+  }
+
+  // Redirect unauthenticated users to login
+  if (!user && location.pathname !== "/login") {
+    return <Navigate to="/login" replace />;
+  }
+
+  
+  return <Outlet />;
 }
 
 export default App

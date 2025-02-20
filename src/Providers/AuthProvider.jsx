@@ -16,14 +16,6 @@ const AuthProvider = ({ children }) => {
       return signInWithPopup(auth, googleProvider);
    }
 
-   const handleRegister = (email, password) => {
-      setLoading(true)
-      return createUserWithEmailAndPassword(auth, email, password);
-   }
-
-   const handleLogin = (email, password) => {
-      return signInWithEmailAndPassword(auth, email, password);
-   }
 
    const updateUserProfile = (updatedData) => {
       return updateProfile(auth.currentUser, updatedData);
@@ -47,8 +39,6 @@ const AuthProvider = ({ children }) => {
 
    const authInfo = {
       handleGoogleLogin,
-      handleRegister,
-      handleLogin,
       user,
       setUser,
       updateUserProfile,
