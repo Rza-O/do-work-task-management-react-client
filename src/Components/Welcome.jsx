@@ -4,6 +4,7 @@ import { IoMdAdd } from "react-icons/io";
 
 const Welcome = () => {
    const { user } = useAuth();
+   
    return (
       <div className="bg-[url('/ContourLine.svg')] h-[300px] bg-cover bg-no-repeat content-center">
          <div className="text-center space-y-3">
