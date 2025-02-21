@@ -28,7 +28,7 @@ const Navbar = () => {
                      tabIndex={0}
                      className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
 
-                     <li><a>Hello</a></li>
+                     <li className='btn-disabled'><a>{ user?.email}</a></li>
                      <li><button onClick={handleSignOut} className='hover:bg-accent hover:text-white'>Logout</button></li>
                   </ul>
                </div>

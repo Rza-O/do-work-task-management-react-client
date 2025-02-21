@@ -8,11 +8,11 @@ const Welcome = () => {
    const [isModalOpen, setIsModalOpen] = useState(false);
 
    return (
-      <div className="bg-[url('/ContourLine.svg')] h-[300px] bg-cover bg-no-repeat flex flex-col justify-center items-center">
-         <h1 className="text-5xl font-bold text-primary">
+      <div className="bg-[url('/ContourLine.svg')] min-h-[300px] bg-cover bg-no-repeat flex flex-col justify-center items-center">
+         <h1 className="text-3xl md:text-5xl font-bold text-primary text-center">
             {`Welcome, ${user?.displayName}!`}
          </h1>
-         <p className="text-2xl font-bold text-text">
+         <p className="text-lg md:text-2xl font-bold text-text">
             Productivity awaits at your priority!
          </p>
          <button
